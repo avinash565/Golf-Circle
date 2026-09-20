@@ -1,0 +1,653 @@
+/*GLOBAL STYLES*/
+:root {
+  /* Main color palette */
+  --bg: #f5f4ed;
+  --ink: #101712;
+  --muted: #687269;
+  --card: #fffef8;
+  --line: #d9ddd2;
+
+  /* Accent colors */
+  --accent: #d4a15a;
+  --green: #163c31;
+  --dark: #0d1714;
+}
+
+
+/*RESET & BASE STYLES*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* CONTAINER */
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+
+/* NAVBAR */
+.nav {
+  height: 72px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(245, 244, 237, 0.94);
+
+  display: flex;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  font-size: 22px;
+}
+
+.brand span {
+  font-weight: 600;
+  color: #087f5b;
+}
+
+.navlinks {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 14px;
+}
+
+
+.hero {
+  padding: 90px 0 70px;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      #dcebdc,
+      transparent 28%
+    ),
+    var(--bg);
+}
+
+.hero h1 {
+  font-size: clamp(46px, 8vw, 88px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  margin: 0 0 24px;
+  max-width: 850px;
+}
+
+.hero p {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* ACTION BUTTON GROUP*/
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+
+/* BUTTONS*/
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 12px;
+
+  padding: 13px 18px;
+
+  background: var(--green);
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn.secondary {
+  background: white;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn.danger {
+  background: #8c2f2f;
+}
+
+
+/* GRID SYSTEM*/
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+/*SECTION*/
+
+.section {
+  padding: 55px 0;
+}
+
+
+/* CARD */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+
+  padding: 22px;
+
+  box-shadow:
+    0 8px 30px rgba(16, 23, 18, 0.04);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+
+/* COMMON UTILITY STYLES */
+
+.muted {
+  color: var(--muted);
+}
+
+.stat {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+
+/* FORMS */
+
+.form {
+  max-width: 480px;
+  margin: 60px auto;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  margin: 7px 0 15px;
+
+  background: white;
+  font: inherit;
+}
+
+
+/*  TABLE */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px 8px;
+
+  border-bottom: 1px solid var(--line);
+
+  text-align: left;
+  font-size: 14px;
+}
+
+
+/* STATUS PILL */
+
+.pill {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 99px;
+
+  background: #e5eee7;
+
+  font-size: 12px;
+}
+
+
+/* ALERT / MESSAGE STYLES */
+
+.error {
+  color: #a12b2b;
+  background: #f9e5e5;
+
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.success {
+  color: #17603d;
+  background: #e4f2e9;
+
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+/* FOOTER */
+
+footer {
+  padding: 40px 0;
+
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+
+  /* SPLIT LAYOUT */
+
+.split {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+  align-items: center;
+}
+
+
+
+  /* ADMIN NAVIGATION */
+
+.admin-nav {
+  display: flex;
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 22px;
+}
+
+
+
+  /* SCORE FORM */
+
+/* Main score form card */
+
+.score-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e7e9e7;
+
+  border-radius: 24px;
+
+  padding: 32px;
+
+  margin-top: 24px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Score form heading */
+
+.score-header {
+  margin-bottom: 28px;
+}
+
+.score-header h3 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.score-header p {
+  margin: 6px 0 0;
+
+  color: #6b7280;
+  font-size: 15px;
+}
+
+
+
+  /* SCORE FORM FIELDS */
+
+.score-fields {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 24px;
+}
+
+.score-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-field label {
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #111827;
+}
+
+
+
+  /* INPUT WRAPPER */
+
+.input-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* Icon inside input */
+
+.input-icon {
+  position: absolute;
+
+  left: 16px;
+
+  font-size: 20px;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+
+  /* SCORE INPUT */
+
+.input-wrapper input {
+  width: 100%;
+  height: 58px;
+
+  padding: 0 16px 0 50px;
+
+  border: 1.5px solid #d7ddd9;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: all 0.2s ease;
+
+  box-sizing: border-box;
+}
+
+
+/* Input hover effect */
+
+.input-wrapper input:hover {
+  border-color: #aeb8b2;
+}
+
+
+/* Input focus effect */
+
+.input-wrapper input:focus {
+  border-color: #087f5b;
+
+  box-shadow:
+    0 0 0 4px rgba(8, 127, 91, 0.1);
+}
+
+
+/* Placeholder text */
+
+.input-wrapper input::placeholder {
+  color: #9ca3af;
+}
+
+
+/* Small helper text below field */
+
+.score-field small {
+  margin-top: 8px;
+
+  color: #7b8490;
+
+  font-size: 13px;
+}
+
+
+
+  /* DATE INPUT */
+
+.input-wrapper input[type="date"] {
+  color-scheme: light;
+}
+
+
+
+  /* SAVE SCORE BUTTON */
+
+.save-score-btn {
+  width: 100%;
+  height: 58px;
+
+  margin-top: 30px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #087f5b;
+  color: white;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  transition: all 0.2s ease;
+}
+
+
+/* Save button hover effect */
+
+.save-score-btn:hover {
+  background: #066b4d;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(8, 127, 91, 0.2);
+}
+
+
+/* Save button click effect */
+
+.save-score-btn:active {
+  transform: translateY(0);
+}
+
+
+/* Icon/text inside save button */
+
+.save-score-btn span {
+  font-size: 19px;
+}
+
+
+
+  /* SCORE FORM MESSAGES */
+
+.score-error {
+  padding: 12px 16px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  background: #fff1f2;
+
+  color: #be123c;
+
+  border: 1px solid #fecdd3;
+
+  font-size: 14px;
+}
+
+.score-success {
+  padding: 12px 16px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  background: #ecfdf5;
+
+  color: #047857;
+
+  border: 1px solid #a7f3d0;
+
+  font-size: 14px;
+}
+
+
+
+  /* RESPONSIVE DESIGN */
+
+@media (max-width: 760px) {
+  /* Make grids single-column on smaller screens */
+
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Hide mobile navigation links */
+
+  .navlinks a.hide-mobile {
+    display: none;
+  }
+
+
+  /* Reduce hero top spacing */
+
+  .hero {
+    padding-top: 55px;
+  }
+
+
+  /* Stack split sections vertically */
+
+  .split {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+
+  /* SCORE FORM RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+
+  .score-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+
+  /* Smaller heading on mobile */
+
+  .score-header h3 {
+    font-size: 24px;
+  }
+
+
+  /* Stack score fields vertically */
+
+  .score-fields {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+
+  /* Reduce button spacing */
+
+  .save-score-btn {
+    margin-top: 24px;
+  }
+}
+
+.golf{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
