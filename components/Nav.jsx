@@ -15,7 +15,7 @@ export default async function Nav() {
       <div className="container nav-inner">
 
         {/* Website logo */}
-        <Link className="brand" style={{width:30}} href="/">
+        <Link className="brand" href="/">
         <div className='golf'>
         <img src="golf-club.png" alt="" width={40}/>
           Golf<span>Circle</span> 
@@ -43,7 +43,7 @@ export default async function Nav() {
               </Link>
 
               {/* Logged-in user's email */}
-              <span className="muted">
+              <span className="muted email-truncate">
                 {user.email}
               </span>
 
@@ -57,7 +57,7 @@ export default async function Nav() {
           ) : (
             /* Show Login and Subscribe when user is NOT logged in */
             <>
-              <Link href="/login">
+              <Link className='btn1' href="/login">
                 Login
               </Link>
 

@@ -41,7 +41,7 @@ a {
 
 /* NAVBAR */
 .nav {
-  height: 72px;
+   min-height: 72px;
   border-bottom: 1px solid var(--line);
   background: rgba(245, 244, 237, 0.94);
 
@@ -55,8 +55,12 @@ a {
 
 .nav-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  row-gap: 10px;
+  padding-block: 12px;
+  width: 100%;
 }
 
 .brand {
@@ -133,6 +137,39 @@ a {
 
   font-weight: 700;
   cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.btn1{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 12px;
+
+  padding: 13px 25px;
+
+  background: var(--green);
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.btn1:hover {
+  background-color: #123d40;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  background-color: #123d40;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn.secondary {
@@ -580,7 +617,7 @@ footer {
 
   /* RESPONSIVE DESIGN */
 
-@media (max-width: 760px) {
+@media (max-width: 400px) {
   /* Make grids single-column on smaller screens */
 
   .grid-3,
@@ -588,11 +625,26 @@ footer {
     grid-template-columns: 1fr;
   }
 
-
+.nav-inner{
+  gap: 12px;
+}
   /* Hide mobile navigation links */
 
   .navlinks a.hide-mobile {
     display: none;
+  }
+  .navlinks {
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .email-truncate {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
 
@@ -615,7 +667,7 @@ footer {
 
   /* SCORE FORM RESPONSIVE DESIGN */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
   .score-card {
     padding: 22px;
