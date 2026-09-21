@@ -3,7 +3,7 @@
 A full-stack trainee-assignment MVP based on the supplied Digital Heroes PRD.
 
 ## Stack
-- Next.js App Router + TypeScript
+- Next.js App Router + JavaScript
 - Supabase PostgreSQL + Supabase Auth
 - Stripe subscriptions
 - Vercel deployment
